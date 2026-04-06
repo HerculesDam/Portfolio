@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title data-i18n="pageTitle">Hércules Dâmaso — Developer & Automation Enthusiast</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" type="image/png" href="favicon.png" />
+</head>
+<body>
+
+  <nav aria-label="Main navigation">
+    <div class="nav-inner">
+      <div class="nav-logo"><span class="prompt-prefix">~/</span>hercules.damaso<span>  _</span></div>
+
+      <ul class="nav-links" role="list">
+        <li><a href="#about"    data-i18n="navAbout">about</a></li>
+        <li><a href="#skills"   data-i18n="navSkills">skills</a></li>
+        <li><a href="#projects" data-i18n="navProjects">projects</a></li>
+        <li><a href="#contact"  data-i18n="navContact">contact</a></li>
+        <li>
+          <div class="lang-toggle" role="group" aria-label="Language switch">
+            <button class="lang-btn active" id="btn-en" onclick="setLang('en')" aria-pressed="true">EN</button>
+            <button class="lang-btn"        id="btn-pt" onclick="setLang('pt')" aria-pressed="false">PT</button>
+          </div>
+        </li>
+      </ul>
+
+      <button class="nav-hamburger" id="hamburger" aria-label="Toggle mobile menu" aria-expanded="false">
+        <i class="fa fa-bars"></i>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mobile-nav" id="mobile-nav" role="navigation" aria-label="Mobile navigation">
+    <a href="#about"    data-i18n="navAbout"    onclick="closeMobileNav()">about</a>
+    <a href="#skills"   data-i18n="navSkills"   onclick="closeMobileNav()">skills</a>
+    <a href="#projects" data-i18n="navProjects" onclick="closeMobileNav()">projects</a>
+    <a href="#contact"  data-i18n="navContact"  onclick="closeMobileNav()">contact</a>
+    <div class="lang-toggle" style="width:fit-content">
+      <button class="lang-btn active" id="mbtn-en" onclick="setLang('en')" aria-pressed="true">EN</button>
+      <button class="lang-btn"        id="mbtn-pt" onclick="setLang('pt')" aria-pressed="false">PT</button>
+    </div>
+  </div>
+
+  <!-- ── Hero ── -->
+  <section id="hero" aria-label="Introduction">
+    <div class="container">
+      <div class="hero-window reveal">
+        <div class="hero-titlebar">
+          <span class="dot dot-red"></span>
+          <span class="dot dot-yellow"></span>
+          <span class="dot dot-green"></span>
+          <span class="hero-titlebar-label">hercules@portfolio: ~</span>
+        </div>
+        <div class="hero-body">
+          <div class="hero-line dim"><span class="prompt-prefix">$&gt;</span> neofetch --minimal</div>
+          <div class="hero-line dim"><span class="prompt-prefix">$&gt;</span> <span data-i18n="heroCmd">whoami</span></div>
+
+          <div class="hero-status">
+            <span class="status-dot"></span>
+            <span data-i18n="heroStatus">Available for new opportunities</span>
+          </div>
+
+          <h1 class="hero-name" aria-label="Developer name">
+            <span class="dim" style="font-size:0.5em;font-weight:400;">
+              <span class="prompt-prefix">&gt;_</span>
+              <span data-i18n="heroHello">Hello, I'm</span>&nbsp;
+            </span><br />
+            <span id="typewriter-name" data-text="Hércules Dâmaso">Hércules Dâmaso</span><span class="cursor" aria-hidden="true"></span>
+          </h1>
+
+          <p class="hero-tagline">
+            <span class="accent2">// </span>
+            <span data-i18n="heroTagline">Full-stack developer &amp; open-source enthusiast</span>
+          </p>
+
+          <div class="hero-cta">
+            <a href="#projects" class="btn btn-primary">
+              <i class="fa fa-code" aria-hidden="true"></i>
+              <span data-i18n="heroCTA1">View my work</span>
+            </a>
+            <a href="#contact" class="btn btn-outline">
+              <i class="fa fa-terminal" aria-hidden="true"></i>
+              <span data-i18n="heroCTA2">Get in touch</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── About ── -->
+  <section id="about" aria-label="About me">
+    <div class="container">
+      <h2 class="section-title reveal" data-index="01"><span data-i18n="aboutTitle">about_me.md</span></h2>
+
+      <div class="about-grid">
+        <div class="about-text reveal">
+          <p data-i18n="aboutP1">Hi! I'm a <span class='accent'>17-year-old developer</span> from Brazil, currently finishing high school with an integrated technician degree in industrial automation. I'm passionate about building practical applications and exploring IoT, embedded systems, and automation technologies that solve real-world problems.</p>
+          <p data-i18n="aboutP2">I love learning new technologies and applying them to real projects. My interests span from web development to embedded systems, IoT solutions, and automation processes. I'm fluent in English and have knowledge of Mandarin Chinese, which opens doors to collaboration and understanding diverse cultures in tech.</p>
+          <p data-i18n="aboutP3">Based in <span class='accent'>Brazil</span> — currently pursuing opportunities to work on automation projects, contribute to open-source, and continue learning about emerging technologies in IoT and embedded systems.</p>
+        </div>
+
+        <div class="about-terminal reveal">
+          <div class="about-terminal-bar">
+            <i class="fa fa-circle" style="color:#ff5f57;font-size:8px"></i>
+            <i class="fa fa-circle" style="color:#ffbd2e;font-size:8px"></i>
+            <i class="fa fa-circle" style="color:#28ca42;font-size:8px"></i>
+            profile.json
+          </div>
+          <div class="about-terminal-body">
+            <div class="t-line">{</div>
+            <div class="t-line" style="padding-left:1.2rem"><span class="t-key">"name"</span>: <span class="t-str">"Hércules Dâmaso"</span>,</div>
+            <div class="t-line" style="padding-left:1.2rem"><span class="t-key">"role"</span>: <span class="t-str" data-i18n="profileRole">"Developer & Automation Enthusiast"</span>,</div>
+            <div class="t-line" style="padding-left:1.2rem"><span class="t-key">"education"</span>: <span class="t-str">"High School + Industrial Automation"</span>,</div>
+            <div class="t-line" style="padding-left:1.2rem"><span class="t-key">"location"</span>: <span class="t-str">"Brazil"</span>,</div>
+            <div class="t-line" style="padding-left:1.2rem"><span class="t-key">"available"</span>: <span style="color:#00ff99">true</span>,</div>
+            <div class="t-line" style="padding-left:1.2rem"><span class="t-key">"interests"</span>: [</div>
+            <div class="t-line" style="padding-left:2.4rem"><span class="t-str" data-i18n="int1">"IoT & embedded systems"</span>,</div>
+            <div class="t-line" style="padding-left:2.4rem"><span class="t-str" data-i18n="int2">"industrial automation"</span>,</div>
+            <div class="t-line" style="padding-left:2.4rem"><span class="t-str" data-i18n="int3">"clean code & problem-solving"</span></div>
+            <div class="t-line" style="padding-left:1.2rem">]</div>
+            <div class="t-line">}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Skills ── -->
+  <section id="skills" aria-label="Technical skills">
+    <div class="container">
+      <h2 class="section-title reveal" data-index="02"><span data-i18n="skillsTitle">skills.json</span></h2>
+
+      <div class="skills-grid reveal-stagger">
+        <div class="skill-group">
+          <div class="skill-group-title"><i class="fa fa-desktop"></i><span data-i18n="skillFE">Frontend</span></div>
+          <div class="skill-tags">
+            <span class="tag">React</span><span class="tag">JavaScript</span><span class="tag">Next.js</span>
+            <span class="tag">HTML5</span> <span class="tag">CSS3</span><span class="tag">Tailwind</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-group-title"><i class="fa fa-server"></i><span data-i18n="skillBE">Backend</span></div>
+          <div class="skill-tags">
+            <span class="tag">Node.js</span><span class="tag">Python</span><span class="tag">Java</span><span class="tag">C#</span>
+            <span class="tag">SQL</span><span class="tag">MongoDB</span><span class="tag">SQLite</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-group-title"><i class="fa fa-tools"></i><span data-i18n="skillTools">DevOps &amp; Tools</span></div>
+          <div class="skill-tags">
+            <span class="tag">Git</span><span class="tag">Linux</span><span class="tag">Arduino</span><span class="tag">VS Code</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-group-title"><i class="fa fa-microchip"></i><span data-i18n="skillIoTML">IoT &amp; ML</span></div>
+          <div class="skill-tags">
+            <span class="tag">ESP32</span><span class="tag">TensorFlow Lite</span><span class="tag">Edge Impulse</span>
+            <span class="tag">C</span><span class="tag">Microcontrollers</span><span class="tag">Machine Learning</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Projects ── -->
+  <section id="projects" aria-label="Projects">
+    <div class="container">
+      <h2 class="section-title reveal" data-index="03"><span data-i18n="projectsTitle">projects/</span></h2>
+
+      <div class="projects-grid reveal-stagger">
+        <article class="project-card">
+          <div class="project-header">
+            <span class="project-icon" aria-hidden="true">🐦</span>
+            <div class="project-links">
+              <a href="https://github.com/HerculesDam/BirdTyping" aria-label="GitHub repo"><i class="fa-brands fa-github"></i></a>
+              <a href="https://herculesdam.github.io/BirdTyping/" aria-label="Live demo"><i class="fa fa-arrow-up-right-from-square"></i></a>
+            </div>
+          </div>
+          <h3 class="project-title" data-i18n="proj1Title">BirdTyping</h3>
+          <p class="project-desc" data-i18n="proj1Desc">BirdTyping is a minimalist, lightweight typing test designed to help you type faster and more accurately. Especially useful for programmers.</p>
+          <div class="project-stack">
+            <span>HTML</span><span>CSS</span><span>JavaScript</span>
+          </div>
+        </article>
+        <article class="project-card">
+          <div class="project-header">
+            <span class="project-icon" aria-hidden="true">📚</span>
+            <div class="project-links">
+              <a href="https://github.com/HerculesDam/Pressa" aria-label="GitHub repo"><i class="fa-brands fa-github"></i></a>
+              <a href="https://herculesdam.github.io/Pressa/" aria-label="Live demo"><i class="fa fa-arrow-up-right-from-square"></i></a>
+            </div>
+          </div>
+          <h3 class="project-title" data-i18n="proj2Title">Pressa</h3>
+          <p class="project-desc" data-i18n="proj2Desc">A speed reading web app that uses the RSVP (Rapid Serial Visual Presentation) technique to help you read faster by flashing one word (or a chunk of words) at a time on screen.</p>
+          <div class="project-stack">
+            <span>HTML</span><span>CSS</span><span>JavaScript</span>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-header">
+            <span class="project-icon" aria-hidden="true">⏰</span>
+            <div class="project-links">
+              <span class="project-private" aria-label="Private project"><i class="fa fa-lock"></i> Private</span>
+            </div>
+          </div>
+          <h3 class="project-title" data-i18n="proj3Title">School scheduler</h3>
+          <p class="project-desc" data-i18n="proj3Desc">An automatic time grid generator for a school institution. The system distributes classes considering teacher availability, room restrictions, curricular requirements and fixed schedules.</p>
+          <div class="project-stack">
+            <span>node.js</span><span>React</span><span>Jest</span>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-header">
+            <span class="project-icon" aria-hidden="true">🧠</span>
+            <div class="project-links">
+              <span class="project-private" aria-label="Private project"><i class="fa fa-lock"></i> Unreleased</span>
+            </div>
+          </div>
+          <h3 class="project-title" data-i18n="proj4Title">PEDRO</h3>
+          <p class="project-desc" data-i18n="proj4Desc">Educational object detection & recognition project. Trained an AI model on Edge Impulse to detect traffic signs on an ESP32 microcontroller. Combines IoT, embedded systems, and machine learning for real-time edge inference.</p>
+          <div class="project-stack">
+            <span>ESP32</span><span>Edge Impulse</span><span>TensorFlow Lite</span><span>Python</span>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-header">
+            <span class="project-icon" aria-hidden="true">📁</span>
+            <div class="project-links">
+              <span class="project-private" aria-label="Private project"><i class="fa fa-lock"></i> Unreleased</span>
+            </div>
+          </div>
+          <h3 class="project-title" data-i18n="proj5Title">File Organizer</h3>
+          <p class="project-desc" data-i18n="proj5Desc">A Python utility that automatically organizes files in any directory by their file extensions. Creates folders as needed and sorts files accordingly, keeping your computer tidy and well-structured.</p>
+          <div class="project-stack">
+            <span>Python</span><span>File I/O</span><span>Automation</span>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-header">
+            <span class="project-icon" aria-hidden="true">🤖</span>
+            <div class="project-links">
+              <span class="project-private" aria-label="Private project"><i class="fa fa-lock"></i> Private</span>
+            </div>
+          </div>
+          <h3 class="project-title" data-i18n="proj6Title">Discord Bots</h3>
+          <p class="project-desc" data-i18n="proj6Desc">Collection of Discord bots developed for various purposes, ranging from moderation and utility functions to entertainment and community engagement. Each bot showcases different discord.py features and automation workflows.</p>
+          <div class="project-stack">
+            <span>Python</span><span>discord.py</span><span>Automation</span>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Contact ── -->
+  <section id="contact" aria-label="Contact">
+    <div class="container">
+      <h2 class="section-title reveal" data-index="04"><span data-i18n="contactTitle">contact.sh</span></h2>
+
+      <div class="contact-inner">
+        <div class="contact-copy reveal">
+          <p data-i18n="contactP1">I'm always open to interesting projects, collaboration ideas, or just a chat about technology and automation. Feel free to reach out!</p>
+          <p data-i18n="contactP2">The best way to contact me is via email or discord. I typically reply within 72 hours.</p>
+          <a href="mailto:herculesfrock@gmail.com" class="contact-email">
+            <i class="fa fa-envelope" aria-hidden="true"></i>
+            herculesfrock@gmail.com
+          </a>
+
+          <div class="social-links">
+            <a href="https://github.com/HerculesDam"   target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub">
+              <i class="fa-brands fa-github"></i> GitHub
+            </a>
+            <a href="https://discord.com/users/524593084080717825" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Discord">
+              <i class="fa-brands fa-discord"></i> Discord
+            </a>
+          </div>
+        </div>
+
+        <div class="contact-terminal reveal">
+          <div class="contact-terminal-bar">bash — contact</div>
+          <div class="contact-terminal-body">
+            <div class="ct-line"><span class="ct-prompt">$&gt; </span><span class="ct-cmd">ping herculesfrock@gmail.com</span></div>
+            <div class="ct-line ct-out" data-i18n="ctOut1">PING herculesfrock@gmail.com: checking availability...</div>
+            <div class="ct-line ct-out ct-ok" data-i18n="ctOut2">64 bytes from hercules: time=12ms  ✓ ONLINE</div>
+            <div class="ct-line">&nbsp;</div>
+            <div class="ct-line"><span class="ct-prompt">$&gt; </span><span class="ct-cmd">curl -X GET /api/availability</span></div>
+            <div class="ct-line ct-out">{ <span style="color:#f8c555">"status"</span>: <span style="color:#00ff99">"available"</span>,</div>
+            <div class="ct-line ct-out">&nbsp;&nbsp;<span style="color:#f8c555">"response_time"</span>: <span style="color:#d19a66">"&lt; 72h"</span>,</div>
+            <div class="ct-line ct-out">&nbsp;&nbsp;<span style="color:#f8c555">"open_to"</span>: <span style="color:#00ff99">"remote"</span> }</div>
+            <div class="ct-line">&nbsp;</div>
+            <div class="ct-line">
+              <span class="ct-prompt">$&gt; </span><span data-i18n="ctCmd3">send_message --to hercules</span><span class="cursor" aria-hidden="true"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Footer ── -->
+  <footer>
+    <div class="footer-inner">
+      <span data-i18n="footerLeft">Built with coffee</span>
+      <span>
+        <span data-i18n="footerRight">Designed &amp; coded by</span>
+        <a href="#hero">Hércules Dâmaso</a>
+      </span>
+    </div>
+  </footer>
+
+  <script src="js/translations.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
