@@ -20,7 +20,7 @@ const translations = {
 
     // ─── TERMINAL ───
     termWelcome:  "Welcome to Hércules Dâmaso's interactive terminal. Type <span class='t-cmd'>help</span> to see available commands.",
-    termHelp:     "Available commands:<br><br>  <span class='t-cmd'>whoami</span>              — About me<br>  <span class='t-cmd'>neofetch</span>            — System info<br>  <span class='t-cmd'>ls projects</span>         — List projects<br>  <span class='t-cmd'>cat resume</span>          — View resume<br>  <span class='t-cmd'>contact</span>             — Contact info<br>  <span class='t-cmd'>skills</span>              — Tech stack<br>  <span class='t-cmd'>clear</span>               — Clear terminal<br>  <span class='t-cmd'>lang [en|pt]</span>        — Switch language<br>  <span class='t-cmd'>theme [dark|light]</span>  — Switch theme",
+    termHelp:     "Available commands:<br><br>  <span class='t-cmd'>whoami</span>              — About me<br>  <span class='t-cmd'>neofetch</span>            — System info<br>  <span class='t-cmd'>ls projects</span>         — List projects<br>  <span class='t-cmd'>cat resume</span>          — View resume<br>  <span class='t-cmd'>contact</span>             — Contact info<br>  <span class='t-cmd'>skills</span>              — Tech stack<br>  <span class='t-cmd'>cowsay <msg></span>       — Cow says something<br>  <span class='t-cmd'>fortune</span>             — Random dev wisdom<br>  <span class='t-cmd'>clear</span>               — Clear terminal<br>  <span class='t-cmd'>lang [en|pt]</span>        — Switch language<br>  <span class='t-cmd'>theme [dark|light]</span>  — Switch theme",
     termWhoami:   "Hércules Dâmaso, 17-year-old developer from Brazil. Coding since age 6 (Scratch games), Arduino at 8 with my father, industrial automation technician and self-taught full-stack dev. Former programming monitor (teacher assistant) at school. I love building things at the intersection of hardware and software.",
     termNeofetch: [
       "■■■■%*****%■■■■■%****#%■■■■",
@@ -63,6 +63,30 @@ const translations = {
     termUnknown:  "Command not recognized. Type <span class='t-cmd'>help</span> for available commands.",
     termCleared:  "",
     termPrompt:   "guest@portfolio:~$",
+    termCowsay: [
+      "Coffee: the real build dependency.",
+      "I code, therefore I debug.",
+      "There's no place like 127.0.0.1.",
+      "It works on my machine.",
+      "Commit early, commit often. Push when it works.",
+      "404: witty message not found.",
+      "Real programmers count from zero.",
+      "My code compiles. I have no idea if it works.",
+    ],
+    termFortune: [
+      "\"In a world of <div>s, be a <section>.\" — Ancient web proverb",
+      "\"First, solve the problem. Then, write the code.\" — John Johnson",
+      "\"Debugging is like being the detective in a crime movie where you are also the murderer.\" — Filipe Fortes",
+      "\"Any fool can write code that a computer can understand. Good programmers write code that humans can understand.\" — Martin Fowler",
+      "\"It's not a bug — it's an undocumented feature.\" — Anonymous",
+      "\"Measuring programming progress by lines of code is like measuring aircraft building progress by weight.\" — Bill Gates",
+      "\"The best way to predict the future is to implement it.\" — Alan Kay",
+      "\"Simplicity is prerequisite for reliability.\" — Edsger Dijkstra",
+      "\"Always code as if the guy who ends up maintaining your code will be a violent psychopath who knows where you live.\" — John Woods",
+      "\"Talk is cheap. Show me the code.\" — Linus Torvalds",
+    ],
+    termSudo: "sudo: Permission denied. You are not root here.<br><br>(Nice try — I respect the ambition.)",
+    termCowsayNoMsg: "Usage: <span class='t-cmd'>cowsay <message></span> — the cow needs something to say!",
 
     // ─── HERO ───
     heroHello:    "Hello, I'm",
@@ -210,7 +234,7 @@ const translations = {
 
     // ─── TERMINAL ───
     termWelcome:  "Bem-vindo ao terminal interativo do Hércules Dâmaso. Digite <span class='t-cmd'>help</span> para ver os comandos disponíveis.",
-    termHelp:     "Comandos disponíveis:<br><br>  <span class='t-cmd'>whoami</span>              — Sobre mim<br>  <span class='t-cmd'>neofetch</span>            — Informações do sistema<br>  <span class='t-cmd'>ls projects</span>         — Listar projetos<br>  <span class='t-cmd'>cat resume</span>          — Ver currículo<br>  <span class='t-cmd'>contact</span>             — Contato<br>  <span class='t-cmd'>skills</span>              — Habilidades<br>  <span class='t-cmd'>clear</span>               — Limpar terminal<br>  <span class='t-cmd'>lang [en|pt]</span>        — Mudar idioma<br>  <span class='t-cmd'>theme [dark|light]</span>  — Mudar tema",
+    termHelp:     "Comandos disponíveis:<br><br>  <span class='t-cmd'>whoami</span>              — Sobre mim<br>  <span class='t-cmd'>neofetch</span>            — Informações do sistema<br>  <span class='t-cmd'>ls projects</span>         — Listar projetos<br>  <span class='t-cmd'>cat resume</span>          — Ver currículo<br>  <span class='t-cmd'>contact</span>             — Contato<br>  <span class='t-cmd'>skills</span>              — Habilidades<br>  <span class='t-cmd'>cowsay <msg></span>       — A vaquinha fala algo<br>  <span class='t-cmd'>fortune</span>             — Sabedoria dev aleatória<br>  <span class='t-cmd'>clear</span>               — Limpar terminal<br>  <span class='t-cmd'>lang [en|pt]</span>        — Mudar idioma<br>  <span class='t-cmd'>theme [dark|light]</span>  — Mudar tema",
     termWhoami:   "Hércules Dâmaso, desenvolvedor de 17 anos do Brasil. Programando desde os 6 anos (joguinhos no Scratch), Arduino aos 8 com meu pai, técnico em automação industrial e dev full-stack autodidata. Ex-monitor de programação (professor assistente) na escola. Adoro construir coisas na interseção entre hardware e software.",
     termNeofetch: [
       "■■■■%*****%■■■■■%****#%■■■■",
@@ -253,6 +277,30 @@ const translations = {
     termUnknown:  "Comando não reconhecido. Digite <span class='t-cmd'>help</span> para ver os comandos disponíveis.",
     termCleared:  "",
     termPrompt:   "visitante@portfolio:~$",
+    termCowsay: [
+      "Café: a verdadeira dependência de build.",
+      "Eu programo, logo eu debugo.",
+      "Não há lugar como 127.0.0.1.",
+      "Na minha máquina funciona.",
+      "Commita cedo, commita sempre. Dá push quando funcionar.",
+      "404: mensagem engraçada não encontrada.",
+      "Programadores de verdade contam a partir do zero.",
+      "Meu código compila. Não faço ideia se funciona.",
+    ],
+    termFortune: [
+      "\"Num mundo de <div>s, seja um <section>.\" — Provérbio web antigo",
+      "\"Primeiro resolva o problema. Depois escreva o código.\" — John Johnson",
+      "\"Debugar é como ser o detetive num filme policial onde você também é o assassino.\" — Filipe Fortes",
+      "\"Qualquer tolo escreve código que um computador entende. Bons programadores escrevem código que humanos entendem.\" — Martin Fowler",
+      "\"Não é um bug — é uma feature não documentada.\" — Anônimo",
+      "\"Medir progresso em programação por linhas de código é como medir progresso na construção de aviões por peso.\" — Bill Gates",
+      "\"A melhor forma de prever o futuro é implementá-lo.\" — Alan Kay",
+      "\"Simplicidade é pré-requisito para confiabilidade.\" — Edsger Dijkstra",
+      "\"Sempre programe como se o cara que vai dar manutenção no seu código for um psicopata violento que sabe onde você mora.\" — John Woods",
+      "\"Conversa é barata. Me mostre o código.\" — Linus Torvalds",
+    ],
+    termSudo: "sudo: Permissão negada. Você não é root aqui.<br><br>(Bela tentativa — respeito a ambição.)",
+    termCowsayNoMsg: "Uso: <span class='t-cmd'>cowsay <mensagem></span> — a vaquinha precisa de algo para dizer!",
 
     // ─── HERO ───
     heroHello:    "Olá, eu sou",

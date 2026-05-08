@@ -290,7 +290,7 @@
         e.preventDefault();
         // Simple autocomplete
         const val = termInput.value.toLowerCase();
-        const commands = ['whoami','neofetch','ls projects','cat resume','contact','skills','clear','help','lang en','lang pt','theme dark','theme light'];
+        const commands = ['whoami','neofetch','ls projects','cat resume','contact','skills','cowsay','fortune','sudo','clear','help','lang en','lang pt','theme dark','theme light'];
         const match = commands.find(c => c.startsWith(val));
         if (match) termInput.value = match;
       }
@@ -356,9 +356,78 @@
     } else if (lower === 'theme light') {
       setTheme('light');
       appendOutput(t.termThemeL);
+    } else if (lower === 'fortune') {
+      const fortunes = t.termFortune;
+      if (Array.isArray(fortunes)) {
+        const pick = fortunes[Math.floor(Math.random() * fortunes.length)];
+        appendOutput('<span class="fortune-text">✨ ' + escapeHtml(pick) + '</span>');
+      }
+    } else if (lower.startsWith('cowsay')) {
+      const args = cmd.trim().slice(6).trim();
+      let msg;
+      if (args) {
+        msg = args;
+      } else {
+        const msgs = t.termCowsay;
+        if (Array.isArray(msgs) && msgs.length) {
+          // Show usage hint since cow needs something to say
+          appendOutput(t.termCowsayNoMsg);
+          // Also show a random phrase as example
+          msg = msgs[Math.floor(Math.random() * msgs.length)];
+          appendOutput('<i>Example:</i>');
+        } else {
+          appendOutput(t.termCowsayNoMsg);
+          return;
+        }
+      }
+      const cow = buildCow(msg);
+      const pre = document.createElement('pre');
+      pre.className = 'term-output-line cowsay-output';
+      pre.innerHTML = cow;
+      termBody.insertBefore(pre, termInputLine);
+    } else if (lower.startsWith('sudo')) {
+      appendOutput(t.termSudo);
     } else {
       appendOutput(t.termUnknown);
     }
+  }
+
+  function buildCow(msg) {
+    const lines = wordWrap(msg, 36);
+    const bubbleWidth = lines[0].length + 2;
+    let bubble = '  <span class="cowsay-bubble">' + '_'.repeat(bubbleWidth) + '</span><br>';
+    if (lines.length === 1) {
+      bubble += '< ' + escapeHtml(lines[0]) + ' ><br>';
+    } else {
+      bubble += '/ ' + escapeHtml(lines[0]) + ' \\<br>';
+      for (let i = 1; i < lines.length - 1; i++) {
+        bubble += '| ' + escapeHtml(lines[i]) + ' |<br>';
+      }
+      bubble += '\\ ' + escapeHtml(lines[lines.length - 1]) + ' /<br>';
+    }
+    bubble += '  <span class="cowsay-bubble">' + '-'.repeat(bubbleWidth) + '</span><br>';
+    bubble += '        \\   ^__^<br>';
+    bubble += '         \\  (oo)\\_______<br>';
+    bubble += '            (__)\\       )\\/\\<br>';
+    bubble += '                ||----w |<br>';
+    bubble += '                ||     ||';
+    return bubble;
+  }
+
+  function wordWrap(text, maxLen) {
+    const words = text.split(' ');
+    const lines = [];
+    let cur = '';
+    for (const w of words) {
+      if (cur.length + w.length + 1 <= maxLen || cur === '') {
+        cur += (cur ? ' ' : '') + w;
+      } else {
+        lines.push(cur);
+        cur = w;
+      }
+    }
+    if (cur) lines.push(cur);
+    return lines;
   }
 
   function clearTerminal() {

@@ -486,6 +486,7 @@ body:not(.motion-safe) .animated-bg { display: none; }
   padding: 1.5rem 2rem;
   max-height: 420px;
   min-height: 280px;
+  min-width: 700px;
   overflow-y: auto;
   font-size: 0.82rem;
   line-height: 1.8;
@@ -513,6 +514,20 @@ body:not(.motion-safe) .animated-bg { display: none; }
   flex-shrink: 0;
 }
 .term-output-line .term-icon { color: var(--accent); vertical-align: text-top; }
+
+/* ── cowsay ── */
+.cowsay-output {
+  margin: 0.3rem 0 0.6rem;
+  font-family: var(--font);
+  line-height: 1.15;
+  color: var(--text);
+  white-space: pre !important;
+  overflow-x: auto;
+}
+.cowsay-output .cowsay-bubble { color: var(--accent); opacity: 0.8; }
+
+/* ── fortune ── */
+.fortune-text { color: var(--accent); font-style: italic; }
 
 .term-input-line {
   display: flex;
