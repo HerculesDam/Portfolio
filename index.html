@@ -1,54 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title data-i18n="pageTitle">Hércules Dâmaso — Developer & Automation Enthusiast</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="17-year-old developer working with industrial automation and modern software. IoT, embedded systems, full-stack web, AI on edge devices.">
+  <meta name="theme-color" content="#0a0e12">
+  <meta name="color-scheme" content="dark light">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <link rel="stylesheet" href="css/style.css" />
-  <link rel="icon" type="image/png" href="favicon.png" />
+  <title>Hércules Dâmaso | Automation & Software Developer</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="apple-touch-icon" href="favicon.png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome 6 (free) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Hércules Dâmaso | Automation & Software Developer">
+  <meta property="og:description" content="Industrial automation meets full-stack development. ESP32, TensorFlow Lite, React, and Python.">
+  <meta property="og:url" content="https://herculesdam.github.io/Portfolio/">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="Hércules Dâmaso | Portfolio">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Hércules Dâmaso | Automation & Software Developer">
+  <meta name="twitter:description" content="Industrial automation meets full-stack development. ESP32, TensorFlow Lite, React, and Python.">
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://herculesdam.github.io/Portfolio/">
+
+  <!-- JSON-LD Person Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Hércules Dâmaso",
+    "jobTitle": "Automation & Software Developer",
+    "url": "https://herculesdam.github.io/Portfolio/",
+    "sameAs": [
+      "https://github.com/HerculesDam",
+      "https://discord.com/users/herculesdam"
+    ],
+    "email": "herculesfrock@gmail.com",
+    "description": "17-year-old developer working with industrial automation and modern software.",
+    "knowsLanguage": ["English", "Portuguese", "Spanish", "Mandarin Chinese"],
+    "nationality": "Brazil",
+    "alumniOf": {
+      "@type": "EducationalOrganization",
+      "description": "Technical Degree in Industrial Automation"
+    }
+  }
+  </script>
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
+  <!-- Skip Navigation Link -->
+  <a class="skip-link" href="#hero" data-i18n="skipNav">Skip to main content</a>
+
+  <!-- Scroll Progress Bar -->
+  <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
+
+  <!-- Animated Background Canvas -->
+  <canvas class="animated-bg" id="animated-bg" aria-hidden="true"></canvas>
+
+  <!-- ================================================================== -->
+  <!-- NAVIGATION                                                          -->
+  <!-- ================================================================== -->
   <nav aria-label="Main navigation">
     <div class="nav-inner">
-      <div class="nav-logo"><span class="prompt-prefix">~/</span>hercules.damaso<span>  _</span></div>
-
-      <ul class="nav-links" role="list">
-        <li><a href="#about"    data-i18n="navAbout">about</a></li>
-        <li><a href="#skills"   data-i18n="navSkills">skills</a></li>
+      <a href="#hero" class="nav-logo" aria-label="Home">~/herculesdam<span>::portfolio</span></a>
+      <ul class="nav-links">
+        <li><a href="#about" data-i18n="navAbout">about</a></li>
+        <li><a href="#skills" data-i18n="navSkills">skills</a></li>
         <li><a href="#projects" data-i18n="navProjects">projects</a></li>
-        <li><a href="#contact"  data-i18n="navContact">contact</a></li>
-        <li>
-          <div class="lang-toggle" role="group" aria-label="Language switch">
-            <button class="lang-btn active" id="btn-en" onclick="setLang('en')" aria-pressed="true">EN</button>
-            <button class="lang-btn"        id="btn-pt" onclick="setLang('pt')" aria-pressed="false">PT</button>
-          </div>
-        </li>
+        <li><a href="#gallery" data-i18n="navGallery">screenshots</a></li>
+        <li><a href="#timeline" data-i18n="navTimeline">journey</a></li>
+        <li><a href="#contact" data-i18n="navContact">contact</a></li>
+        <li><a href="resume.html" data-i18n="navResume">resume</a></li>
       </ul>
-
-      <button class="nav-hamburger" id="hamburger" aria-label="Toggle mobile menu" aria-expanded="false">
-        <i class="fa fa-bars"></i>
-      </button>
+      <div style="display:flex;align-items:center;gap:0.6rem;">
+        <div class="lang-toggle" role="radiogroup" aria-label="Language selector">
+          <button class="lang-btn active" data-lang="en" role="radio" aria-checked="true" aria-label="English">EN</button>
+          <button class="lang-btn" data-lang="pt" role="radio" aria-checked="false" aria-label="Português">PT</button>
+        </div>
+        <button class="theme-toggle-btn" id="theme-toggle" aria-label="Toggle light/dark theme" data-i18n="themeToggle"><i class="fa-solid fa-moon"></i></button>
+        <button class="nav-hamburger" id="nav-hamburger" aria-label="Toggle menu" aria-expanded="false"><i class="fa-solid fa-bars"></i></button>
+      </div>
+    </div>
+    <!-- Mobile nav drawer -->
+    <div class="mobile-nav" id="mobile-nav" aria-hidden="true">
+      <a href="#about" data-i18n="navAbout">about</a>
+      <a href="#skills" data-i18n="navSkills">skills</a>
+      <a href="#projects" data-i18n="navProjects">projects</a>
+      <a href="#gallery" data-i18n="navGallery">screenshots</a>
+      <a href="#timeline" data-i18n="navTimeline">journey</a>
+      <a href="#contact" data-i18n="navContact">contact</a>
+      <a href="resume.html" data-i18n="navResume">resume</a>
     </div>
   </nav>
 
-  <div class="mobile-nav" id="mobile-nav" role="navigation" aria-label="Mobile navigation">
-    <a href="#about"    data-i18n="navAbout"    onclick="closeMobileNav()">about</a>
-    <a href="#skills"   data-i18n="navSkills"   onclick="closeMobileNav()">skills</a>
-    <a href="#projects" data-i18n="navProjects" onclick="closeMobileNav()">projects</a>
-    <a href="#contact"  data-i18n="navContact"  onclick="closeMobileNav()">contact</a>
-    <div class="lang-toggle" style="width:fit-content">
-      <button class="lang-btn active" id="mbtn-en" onclick="setLang('en')" aria-pressed="true">EN</button>
-      <button class="lang-btn"        id="mbtn-pt" onclick="setLang('pt')" aria-pressed="false">PT</button>
-    </div>
-  </div>
-
-  <!-- ── Hero ── -->
+  <!-- ================================================================== -->
+  <!-- HERO — INTERACTIVE TERMINAL                                        -->
+  <!-- ================================================================== -->
   <section id="hero" aria-label="Introduction">
     <div class="container">
       <div class="hero-window reveal">
@@ -56,76 +118,70 @@
           <span class="dot dot-red"></span>
           <span class="dot dot-yellow"></span>
           <span class="dot dot-green"></span>
-          <span class="hero-titlebar-label">hercules@portfolio: ~</span>
+          <span class="hero-titlebar-label">guest@portfolio: bash — 80×24</span>
         </div>
-        <div class="hero-body">
-          <div class="hero-line dim"><span class="prompt-prefix">$&gt;</span> neofetch --minimal</div>
-          <div class="hero-line dim"><span class="prompt-prefix">$&gt;</span> <span data-i18n="heroCmd">whoami</span></div>
-
-          <div class="hero-status">
-            <span class="status-dot"></span>
-            <span data-i18n="heroStatus">Available for new opportunities</span>
+        <div class="hero-info-line">
+          <span class="hero-status" data-i18n="heroStatus">
+            <span class="status-dot" aria-hidden="true"></span>
+            Available for new opportunities
+          </span>
+          <span class="multi-text-wrap">
+            <span id="multi-text"></span>
+            <span class="cursor" aria-hidden="true"></span>
+          </span>
+        </div>
+        <div class="terminal-body" id="terminal-body" role="log" aria-live="polite" aria-label="Interactive terminal">
+          <!-- output lines go here -->
+          <div class="term-input-line" id="term-input-line">
+            <span class="term-prompt" aria-hidden="true">guest@portfolio:~$ </span>
+            <input type="text" class="term-input" id="term-input"
+                   placeholder="Type help to start..."
+                   aria-label="Terminal input"
+                   autocomplete="off"
+                   spellcheck="false">
           </div>
-
-          <h1 class="hero-name" aria-label="Developer name">
-            <span class="dim" style="font-size:0.5em;font-weight:400;">
-              <span class="prompt-prefix">&gt;_</span>
-              <span data-i18n="heroHello">Hello, I'm</span>&nbsp;
-            </span><br />
-            <span id="typewriter-name" data-text="Hércules Dâmaso">Hércules Dâmaso</span><span class="cursor" aria-hidden="true"></span>
-          </h1>
-
-          <p class="hero-tagline">
-            <span class="accent2">// </span>
-            <span data-i18n="heroTagline">Full-stack developer &amp; open-source enthusiast</span>
-          </p>
-
-          <div class="hero-cta">
-            <a href="#projects" class="btn btn-primary">
-              <i class="fa fa-code" aria-hidden="true"></i>
-              <span data-i18n="heroCTA1">View my work</span>
-            </a>
-            <a href="#contact" class="btn btn-outline">
-              <i class="fa fa-terminal" aria-hidden="true"></i>
-              <span data-i18n="heroCTA2">Get in touch</span>
-            </a>
-          </div>
+        </div>
+        <div class="hero-cta-row no-print">
+          <a href="#projects" class="btn btn-primary" data-scroll-to="#projects" data-i18n="heroCTA1">Explore my work</a>
+          <a href="resume.html" class="btn btn-outline" data-i18n="heroCTA2">Download CV</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ── About ── -->
-  <section id="about" aria-label="About me">
+  <!-- ================================================================== -->
+  <!-- ABOUT                                                               -->
+  <!-- ================================================================== -->
+  <section id="about" aria-label="About">
     <div class="container">
-      <h2 class="section-title reveal" data-index="01"><span data-i18n="aboutTitle">about_me.md</span></h2>
-
+      <h2 class="section-title reveal" data-index="01." data-i18n="aboutTitle">about_me.md</h2>
       <div class="about-grid">
         <div class="about-text reveal">
-          <p data-i18n="aboutP1">Hi! I'm a <span class='accent'>17-year-old developer</span> from Brazil, currently finishing high school with an integrated technician degree in industrial automation. I'm passionate about building practical applications and exploring IoT, embedded systems, and automation technologies that solve real-world problems.</p>
-          <p data-i18n="aboutP2">I love learning new technologies and applying them to real projects. My interests span from web development to embedded systems, IoT solutions, and automation processes. I'm fluent in English and have knowledge of Mandarin Chinese, which opens doors to collaboration and understanding diverse cultures in tech.</p>
-          <p data-i18n="aboutP3">Based in <span class='accent'>Brazil</span> — currently pursuing opportunities to work on automation projects, contribute to open-source, and continue learning about emerging technologies in IoT and embedded systems.</p>
+          <p data-i18n="aboutP1">Hi! I'm a <span class="accent">17-year-old developer</span> from Brazil, currently finishing high school...</p>
+          <p data-i18n="aboutP2">I've built <span class="accent">9+ projects</span> including typing tools, speed reading apps, landing pages...</p>
+          <div class="about-quote" data-i18n="aboutQuote">I write code that connects the physical world to the digital one, from microcontrollers to full-stack web apps.</div>
+          <p data-i18n="aboutP3">Fluent in English, conversational Spanish, and basic Mandarin Chinese. Based in Brazil and open to remote opportunities.</p>
         </div>
-
         <div class="about-terminal reveal">
           <div class="about-terminal-bar">
-            <i class="fa fa-circle" style="color:#ff5f57;font-size:8px"></i>
-            <i class="fa fa-circle" style="color:#ffbd2e;font-size:8px"></i>
-            <i class="fa fa-circle" style="color:#28ca42;font-size:8px"></i>
-            profile.json
+            <span class="dot dot-red" aria-hidden="true"></span>
+            <span class="dot dot-yellow" aria-hidden="true"></span>
+            <span class="dot dot-green" aria-hidden="true"></span>
           </div>
           <div class="about-terminal-body">
+            <div class="t-line t-comment">// profile.json</div>
             <div class="t-line">{</div>
-            <div class="t-line" style="padding-left:1.2rem"><span class="t-key">"name"</span>: <span class="t-str">"Hércules Dâmaso"</span>,</div>
-            <div class="t-line" style="padding-left:1.2rem"><span class="t-key">"role"</span>: <span class="t-str" data-i18n="profileRole">"Developer & Automation Enthusiast"</span>,</div>
-            <div class="t-line" style="padding-left:1.2rem"><span class="t-key">"education"</span>: <span class="t-str">"High School + Industrial Automation"</span>,</div>
-            <div class="t-line" style="padding-left:1.2rem"><span class="t-key">"location"</span>: <span class="t-str">"Brazil"</span>,</div>
-            <div class="t-line" style="padding-left:1.2rem"><span class="t-key">"available"</span>: <span style="color:#00ff99">true</span>,</div>
-            <div class="t-line" style="padding-left:1.2rem"><span class="t-key">"interests"</span>: [</div>
-            <div class="t-line" style="padding-left:2.4rem"><span class="t-str" data-i18n="int1">"IoT & embedded systems"</span>,</div>
-            <div class="t-line" style="padding-left:2.4rem"><span class="t-str" data-i18n="int2">"industrial automation"</span>,</div>
-            <div class="t-line" style="padding-left:2.4rem"><span class="t-str" data-i18n="int3">"clean code & problem-solving"</span></div>
-            <div class="t-line" style="padding-left:1.2rem">]</div>
+            <div class="t-line">&nbsp;&nbsp;<span class="t-key">"name"</span>: <span class="t-str">"Hércules Dâmaso"</span>,</div>
+            <div class="t-line">&nbsp;&nbsp;<span class="t-key">"age"</span>: <span class="t-num">17</span>,</div>
+            <div class="t-line">&nbsp;&nbsp;<span class="t-key">"role"</span>: <span class="t-str" data-i18n="profileRole">"Developer & Automation Enthusiast"</span>,</div>
+            <div class="t-line">&nbsp;&nbsp;<span class="t-key">"location"</span>: <span class="t-str">"Brazil"</span>,</div>
+            <div class="t-line">&nbsp;&nbsp;<span class="t-key">"education"</span>: <span class="t-str">"Technical Degree, Industrial Automation"</span>,</div>
+            <div class="t-line">&nbsp;&nbsp;<span class="t-key">"coding_since"</span>: <span class="t-num">2015</span>,</div>
+            <div class="t-line">&nbsp;&nbsp;<span class="t-key">"interests"</span>: [</div>
+            <div class="t-line">&nbsp;&nbsp;&nbsp;&nbsp;<span class="t-str" data-i18n="int1">"IoT & embedded systems"</span>,</div>
+            <div class="t-line">&nbsp;&nbsp;&nbsp;&nbsp;<span class="t-str" data-i18n="int2">"industrial automation"</span>,</div>
+            <div class="t-line">&nbsp;&nbsp;&nbsp;&nbsp;<span class="t-str" data-i18n="int3">"clean code & problem-solving"</span></div>
+            <div class="t-line">&nbsp;&nbsp;]</div>
             <div class="t-line">}</div>
           </div>
         </div>
@@ -133,152 +189,418 @@
     </div>
   </section>
 
-  <!-- ── Skills ── -->
-  <section id="skills" aria-label="Technical skills">
+  <!-- ================================================================== -->
+  <!-- SKILLS — PROFICIENCY BARS                                           -->
+  <!-- ================================================================== -->
+  <section id="skills" aria-label="Skills">
     <div class="container">
-      <h2 class="section-title reveal" data-index="02"><span data-i18n="skillsTitle">skills.json</span></h2>
-
+      <h2 class="section-title reveal" data-index="02." data-i18n="skillsTitle">skills.json</h2>
       <div class="skills-grid reveal-stagger">
         <div class="skill-group">
-          <div class="skill-group-title"><i class="fa fa-desktop"></i><span data-i18n="skillFE">Frontend</span></div>
-          <div class="skill-tags">
-            <span class="tag">React</span><span class="tag">JavaScript</span><span class="tag">Next.js</span>
-            <span class="tag">HTML5</span> <span class="tag">CSS3</span><span class="tag">Tailwind</span>
+          <div class="skill-group-title" data-i18n="skillFE">Frontend</div>
+          <div class="skill-bars">
+            <div class="skill-bar-item">
+              <div class="skill-bar-label"><span data-i18n="skillReact">React / Next.js</span><span>70%</span></div>
+              <div class="skill-bar-track"><div class="skill-bar-fill" data-width="70"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="skill-bar-label"><span data-i18n="skillJS">JavaScript / TypeScript</span><span>75%</span></div>
+              <div class="skill-bar-track"><div class="skill-bar-fill" data-width="75"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="skill-bar-label"><span data-i18n="skillCSS">HTML5 / CSS3 / Tailwind</span><span>80%</span></div>
+              <div class="skill-bar-track"><div class="skill-bar-fill" data-width="80"></div></div>
+            </div>
           </div>
         </div>
         <div class="skill-group">
-          <div class="skill-group-title"><i class="fa fa-server"></i><span data-i18n="skillBE">Backend</span></div>
-          <div class="skill-tags">
-            <span class="tag">Node.js</span><span class="tag">Python</span><span class="tag">Java</span><span class="tag">C#</span>
-            <span class="tag">SQL</span><span class="tag">MongoDB</span><span class="tag">SQLite</span>
+          <div class="skill-group-title" data-i18n="skillBE">Backend</div>
+          <div class="skill-bars">
+            <div class="skill-bar-item">
+              <div class="skill-bar-label"><span data-i18n="skillNode">Node.js / Express</span><span>65%</span></div>
+              <div class="skill-bar-track"><div class="skill-bar-fill" data-width="65"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="skill-bar-label"><span data-i18n="skillPython">Python / discord.py</span><span>70%</span></div>
+              <div class="skill-bar-track"><div class="skill-bar-fill" data-width="70"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="skill-bar-label"><span data-i18n="skillJava">Java / C#</span><span>55%</span></div>
+              <div class="skill-bar-track"><div class="skill-bar-fill" data-width="55"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="skill-bar-label"><span data-i18n="skillSQL">SQL / MongoDB / SQLite</span><span>50%</span></div>
+              <div class="skill-bar-track"><div class="skill-bar-fill" data-width="50"></div></div>
+            </div>
           </div>
         </div>
         <div class="skill-group">
-          <div class="skill-group-title"><i class="fa fa-tools"></i><span data-i18n="skillTools">DevOps &amp; Tools</span></div>
-          <div class="skill-tags">
-            <span class="tag">Git</span><span class="tag">Linux</span><span class="tag">Arduino</span><span class="tag">VS Code</span>
+          <div class="skill-group-title" data-i18n="skillTools">DevOps & Tools</div>
+          <div class="skill-bars">
+            <div class="skill-bar-item">
+              <div class="skill-bar-label"><span data-i18n="skillGit">Git / GitHub</span><span>80%</span></div>
+              <div class="skill-bar-track"><div class="skill-bar-fill" data-width="80"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="skill-bar-label"><span data-i18n="skillLinux">Linux / CLI</span><span>60%</span></div>
+              <div class="skill-bar-track"><div class="skill-bar-fill" data-width="60"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="skill-bar-label"><span data-i18n="skillArduino">Arduino / VS Code</span><span>75%</span></div>
+              <div class="skill-bar-track"><div class="skill-bar-fill" data-width="75"></div></div>
+            </div>
           </div>
         </div>
         <div class="skill-group">
-          <div class="skill-group-title"><i class="fa fa-microchip"></i><span data-i18n="skillIoTML">IoT &amp; ML</span></div>
-          <div class="skill-tags">
-            <span class="tag">ESP32</span><span class="tag">TensorFlow Lite</span><span class="tag">Edge Impulse</span>
-            <span class="tag">C</span><span class="tag">Microcontrollers</span><span class="tag">Machine Learning</span>
+          <div class="skill-group-title" data-i18n="skillIoTML">IoT & Machine Learning</div>
+          <div class="skill-bars">
+            <div class="skill-bar-item">
+              <div class="skill-bar-label"><span data-i18n="skillESP32">ESP32 / Microcontrollers</span><span>70%</span></div>
+              <div class="skill-bar-track"><div class="skill-bar-fill" data-width="70"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="skill-bar-label"><span data-i18n="skillTF">TensorFlow Lite</span><span>50%</span></div>
+              <div class="skill-bar-track"><div class="skill-bar-fill" data-width="50"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="skill-bar-label"><span data-i18n="skillEdge">Edge Impulse</span><span>55%</span></div>
+              <div class="skill-bar-track"><div class="skill-bar-fill" data-width="55"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="skill-bar-label"><span data-i18n="skillC">C / Embedded C</span><span>60%</span></div>
+              <div class="skill-bar-track"><div class="skill-bar-fill" data-width="60"></div></div>
+            </div>
+          </div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-group-title" data-i18n="skillMobile">Mobile & PWA</div>
+          <div class="skill-bars">
+            <div class="skill-bar-item">
+              <div class="skill-bar-label"><span data-i18n="skillRN">React Native / Expo</span><span>50%</span></div>
+              <div class="skill-bar-track"><div class="skill-bar-fill" data-width="50"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="skill-bar-label"><span data-i18n="skillPWA">PWA / Service Workers</span><span>60%</span></div>
+              <div class="skill-bar-track"><div class="skill-bar-fill" data-width="60"></div></div>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ── Projects ── -->
+  <!-- ================================================================== -->
+  <!-- PROJECTS — CHALLENGE → OUTCOME CARDS                                -->
+  <!-- ================================================================== -->
   <section id="projects" aria-label="Projects">
     <div class="container">
-      <h2 class="section-title reveal" data-index="03"><span data-i18n="projectsTitle">projects/</span></h2>
-
+      <h2 class="section-title reveal" data-index="03." data-i18n="projectsTitle">projects/</h2>
       <div class="projects-grid reveal-stagger">
+
+        <!-- BirdTyping -->
         <article class="project-card">
           <div class="project-header">
-            <span class="project-icon" aria-hidden="true">🐦</span>
+            <span class="project-icon" aria-hidden="true"><i class="fa-solid fa-feather-pointed"></i></span>
             <div class="project-links">
-              <a href="https://github.com/HerculesDam/BirdTyping" aria-label="GitHub repo"><i class="fa-brands fa-github"></i></a>
-              <a href="https://herculesdam.github.io/BirdTyping/" aria-label="Live demo"><i class="fa fa-arrow-up-right-from-square"></i></a>
+              <a href="https://github.com/HerculesDam/BirdTyping" target="_blank" rel="noopener" aria-label="View BirdTyping source code on GitHub" data-i18n="projViewCode">View code</a>
+              <a href="https://herculesdam.github.io/BirdTyping/" target="_blank" rel="noopener" aria-label="View BirdTyping live demo" data-i18n="projViewLive">Live demo</a>
             </div>
           </div>
           <h3 class="project-title" data-i18n="proj1Title">BirdTyping</h3>
-          <p class="project-desc" data-i18n="proj1Desc">BirdTyping is a minimalist, lightweight typing test designed to help you type faster and more accurately. Especially useful for programmers.</p>
-          <div class="project-stack">
-            <span>HTML</span><span>CSS</span><span>JavaScript</span>
-          </div>
+          <p class="project-challenge" data-i18n="proj1Challenge">Challenge: Typing speed tests were bloated and slow.</p>
+          <p class="project-outcome" data-i18n="proj1Outcome">Outcome: Built a minimalist, lightweight alternative.</p>
+          <div class="project-stack"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
         </article>
+
+        <!-- Pressa -->
         <article class="project-card">
           <div class="project-header">
-            <span class="project-icon" aria-hidden="true">📚</span>
+            <span class="project-icon" aria-hidden="true"><i class="fa-solid fa-book-open"></i></span>
             <div class="project-links">
-              <a href="https://github.com/HerculesDam/Pressa" aria-label="GitHub repo"><i class="fa-brands fa-github"></i></a>
-              <a href="https://herculesdam.github.io/Pressa/" aria-label="Live demo"><i class="fa fa-arrow-up-right-from-square"></i></a>
+              <a href="https://github.com/HerculesDam/Pressa" target="_blank" rel="noopener" aria-label="View Pressa source code on GitHub" data-i18n="projViewCode">View code</a>
+              <a href="https://herculesdam.github.io/Pressa/" target="_blank" rel="noopener" aria-label="View Pressa live demo" data-i18n="projViewLive">Live demo</a>
             </div>
           </div>
           <h3 class="project-title" data-i18n="proj2Title">Pressa</h3>
-          <p class="project-desc" data-i18n="proj2Desc">A speed reading web app that uses the RSVP (Rapid Serial Visual Presentation) technique to help you read faster by flashing one word (or a chunk of words) at a time on screen.</p>
-          <div class="project-stack">
-            <span>HTML</span><span>CSS</span><span>JavaScript</span>
-          </div>
+          <p class="project-challenge" data-i18n="proj2Challenge">Challenge: Reading speed plateaus without structured practice.</p>
+          <p class="project-outcome" data-i18n="proj2Outcome">Outcome: Created an RSVP speed reading tool.</p>
+          <div class="project-stack"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
         </article>
 
+        <!-- Pigeon Express -->
         <article class="project-card">
           <div class="project-header">
-            <span class="project-icon" aria-hidden="true">⏰</span>
+            <span class="project-icon" aria-hidden="true"><i class="fa-solid fa-dove"></i></span>
             <div class="project-links">
-              <span class="project-private" aria-label="Private project"><i class="fa fa-lock"></i> Private</span>
+              <a href="https://github.com/HerculesDam/Pigeon-Express" target="_blank" rel="noopener" aria-label="View Pigeon Express source code on GitHub" data-i18n="projViewCode">View code</a>
+              <a href="https://herculesdam.github.io/Pigeon-Express/" target="_blank" rel="noopener" aria-label="View Pigeon Express live demo" data-i18n="projViewLive">Live demo</a>
             </div>
           </div>
-          <h3 class="project-title" data-i18n="proj3Title">School scheduler</h3>
-          <p class="project-desc" data-i18n="proj3Desc">An automatic time grid generator for a school institution. The system distributes classes considering teacher availability, room restrictions, curricular requirements and fixed schedules.</p>
-          <div class="project-stack">
-            <span>node.js</span><span>React</span><span>Jest</span>
-          </div>
+          <h3 class="project-title" data-i18n="proj3Title">Pigeon Express</h3>
+          <p class="project-challenge" data-i18n="proj3Challenge">Challenge: Delivery services need a clean, trust-building landing page.</p>
+          <p class="project-outcome" data-i18n="proj3Outcome">Outcome: Designed and built a responsive delivery service landing page with pricing tables, features showcase, and contact flow.</p>
+          <div class="project-stack"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
         </article>
 
+        <!-- School Scheduler -->
         <article class="project-card">
           <div class="project-header">
-            <span class="project-icon" aria-hidden="true">🧠</span>
+            <span class="project-icon" aria-hidden="true"><i class="fa-solid fa-clock"></i></span>
             <div class="project-links">
-              <span class="project-private" aria-label="Private project"><i class="fa fa-lock"></i> Unreleased</span>
+              <span class="project-private" data-i18n="projPrivate">Private</span>
             </div>
           </div>
-          <h3 class="project-title" data-i18n="proj4Title">PEDRO</h3>
-          <p class="project-desc" data-i18n="proj4Desc">Educational object detection & recognition project. Trained an AI model on Edge Impulse to detect traffic signs on an ESP32 microcontroller. Combines IoT, embedded systems, and machine learning for real-time edge inference.</p>
-          <div class="project-stack">
-            <span>ESP32</span><span>Edge Impulse</span><span>TensorFlow Lite</span><span>Python</span>
-          </div>
+          <h3 class="project-title" data-i18n="proj4Title">School Scheduler</h3>
+          <p class="project-challenge" data-i18n="proj4Challenge">Challenge: Manual class scheduling was error-prone.</p>
+          <p class="project-outcome" data-i18n="proj4Outcome">Outcome: Automated time grid generator.</p>
+          <div class="project-stack"><span>React</span><span>Node.js</span><span>Jest</span></div>
         </article>
 
+        <!-- PEDRO -->
         <article class="project-card">
           <div class="project-header">
-            <span class="project-icon" aria-hidden="true">📁</span>
+            <span class="project-icon" aria-hidden="true"><i class="fa-solid fa-brain"></i></span>
             <div class="project-links">
-              <span class="project-private" aria-label="Private project"><i class="fa fa-lock"></i> Unreleased</span>
+              <span class="project-private" data-i18n="projPrivate">Private</span>
             </div>
           </div>
-          <h3 class="project-title" data-i18n="proj5Title">File Organizer</h3>
-          <p class="project-desc" data-i18n="proj5Desc">A Python utility that automatically organizes files in any directory by their file extensions. Creates folders as needed and sorts files accordingly, keeping your computer tidy and well-structured.</p>
-          <div class="project-stack">
-            <span>Python</span><span>File I/O</span><span>Automation</span>
-          </div>
+          <h3 class="project-title" data-i18n="proj5Title">PEDRO</h3>
+          <p class="project-challenge" data-i18n="proj5Challenge">Challenge: Can AI object detection run on a $5 microcontroller?</p>
+          <p class="project-outcome" data-i18n="proj5Outcome">Outcome: Trained traffic sign detection model, deployed to ESP32.</p>
+          <div class="project-stack"><span>ESP32</span><span>TensorFlow Lite</span><span>Edge Impulse</span><span>C</span></div>
         </article>
 
+        <!-- File Organizer -->
         <article class="project-card">
           <div class="project-header">
-            <span class="project-icon" aria-hidden="true">🤖</span>
+            <span class="project-icon" aria-hidden="true"><i class="fa-solid fa-folder-open"></i></span>
             <div class="project-links">
-              <span class="project-private" aria-label="Private project"><i class="fa fa-lock"></i> Private</span>
+              <span class="project-private" data-i18n="projPrivate">Private</span>
             </div>
           </div>
-          <h3 class="project-title" data-i18n="proj6Title">Discord Bots</h3>
-          <p class="project-desc" data-i18n="proj6Desc">Collection of Discord bots developed for various purposes, ranging from moderation and utility functions to entertainment and community engagement. Each bot showcases different discord.py features and automation workflows.</p>
-          <div class="project-stack">
-            <span>Python</span><span>discord.py</span><span>Automation</span>
+          <h3 class="project-title" data-i18n="proj6Title">File Organizer</h3>
+          <p class="project-challenge" data-i18n="proj6Challenge">Challenge: Downloads folder was a chaos zone.</p>
+          <p class="project-outcome" data-i18n="proj6Outcome">Outcome: Python utility that auto-sorts files by extension.</p>
+          <div class="project-stack"><span>Python</span></div>
+        </article>
+
+        <!-- Discord Bots -->
+        <article class="project-card">
+          <div class="project-header">
+            <span class="project-icon" aria-hidden="true"><i class="fa-brands fa-discord"></i></span>
+            <div class="project-links">
+              <span class="project-private" data-i18n="projPrivate">Private</span>
+            </div>
           </div>
+          <h3 class="project-title" data-i18n="proj7Title">Discord Bots</h3>
+          <p class="project-challenge" data-i18n="proj7Challenge">Challenge: Community servers needed automated moderation and engagement.</p>
+          <p class="project-outcome" data-i18n="proj7Outcome">Outcome: Collection of bots handling moderation, utilities, and community engagement.</p>
+          <div class="project-stack"><span>Python</span><span>discord.py</span></div>
+        </article>
+
+        <!-- SwimTracker -->
+        <article class="project-card">
+          <div class="project-header">
+            <span class="project-icon" aria-hidden="true"><i class="fa-solid fa-person-swimming"></i></span>
+            <div class="project-links">
+              <span class="project-private" data-i18n="projPrivate">Private</span>
+            </div>
+          </div>
+          <h3 class="project-title" data-i18n="proj8Title">SwimTracker</h3>
+          <p class="project-challenge" data-i18n="proj8Challenge">Challenge: No dedicated workout tracker existed for swimmers — running/weightlifting apps don't map to pool training.</p>
+          <p class="project-outcome" data-i18n="proj8Outcome">Outcome: Built a mobile web app for logging swim workouts — distance, stroke type, pace, rest intervals, and progression tracking.</p>
+          <div class="project-stack"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>PWA</span></div>
+        </article>
+
+        <!-- Tramontana -->
+        <article class="project-card">
+          <div class="project-header">
+            <span class="project-icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M3 18l4-4 3 2 5-6 6 8"/><path d="M18 3v5l-4-1-3 5-4-3-4 4"/></svg></span>
+            <div class="project-links">
+              <span class="project-private" data-i18n="projPrivate">Private</span>
+            </div>
+          </div>
+          <h3 class="project-title" data-i18n="proj9Title">Tramontana</h3>
+          <p class="project-challenge" data-i18n="proj9Challenge">Challenge: People with bipolar disorder lack intuitive tools to track mood cycles, medication adherence, and emotional patterns.</p>
+          <p class="project-outcome" data-i18n="proj9Outcome">Outcome: React Native app in development — mood logging, medication reminders, data visualization, and insights to help users and their doctors make informed decisions.</p>
+          <div class="project-stack"><span>React Native</span><span>JavaScript</span><span>Healthcare</span></div>
         </article>
 
       </div>
     </div>
   </section>
 
-  <!-- ── Contact ── -->
+  <!-- ================================================================== -->
+  <!-- PROJECT SCREENSHOT GALLERY                                          -->
+  <!-- ================================================================== -->
+  <section id="gallery" aria-label="Project Screenshots">
+    <div class="container">
+      <h2 class="section-title reveal" data-index="04." data-i18n="galleryTitle">screenshots/</h2>
+      <div class="gallery-grid reveal-stagger">
+        <!-- BirdTyping Dark -->
+        <figure class="gallery-card">
+          <div class="gallery-img-wrap">
+            <img src="Images/BirdTyping-DarkmodeSC.png" alt="BirdTyping dark mode screenshot" loading="lazy" />
+          </div>
+          <figcaption>
+            <span class="gallery-proj-name">BirdTyping</span>
+          <span>dark mode: typing test for programmers</span>
+          </figcaption>
+        </figure>
+        <!-- BirdTyping Light -->
+        <figure class="gallery-card">
+          <div class="gallery-img-wrap">
+            <img src="Images/BirdTyping-LightmodeSC.png" alt="BirdTyping light mode screenshot" loading="lazy" />
+          </div>
+          <figcaption>
+            <span class="gallery-proj-name">BirdTyping</span>
+          <span>light mode: typing test for programmers</span>
+          </figcaption>
+        </figure>
+        <!-- Pressa Hero -->
+        <figure class="gallery-card">
+          <div class="gallery-img-wrap">
+            <img src="Images/Pressa-Hero.png" alt="Pressa hero section" loading="lazy" />
+          </div>
+          <figcaption>
+            <span class="gallery-proj-name">Pressa</span>
+          <span>hero section: RSVP speed reading app</span>
+          </figcaption>
+        </figure>
+        <!-- Pressa screenshot -->
+        <figure class="gallery-card">
+          <div class="gallery-img-wrap">
+            <img src="Images/Pressa-screenshot.png" alt="Pressa app screenshot" loading="lazy" />
+          </div>
+          <figcaption>
+            <span class="gallery-proj-name">Pressa</span>
+            <span>app view: RSVP speed reading</span>
+          </figcaption>
+        </figure>
+        <!-- Pigeon Express Hero -->
+        <figure class="gallery-card">
+          <div class="gallery-img-wrap">
+            <img src="Images/PigeonExpress-Hero.png" alt="Pigeon Express hero section" loading="lazy" />
+          </div>
+          <figcaption>
+            <span class="gallery-proj-name">Pigeon Express</span>
+            <span>hero section: delivery landing page</span>
+          </figcaption>
+        </figure>
+        <!-- Pigeon Express About -->
+        <figure class="gallery-card">
+          <div class="gallery-img-wrap">
+            <img src="Images/PigeonExpress-AboutScreenshot.png" alt="Pigeon Express about section" loading="lazy" />
+          </div>
+          <figcaption>
+            <span class="gallery-proj-name">Pigeon Express</span>
+            <span>about section: delivery landing page</span>
+          </figcaption>
+        </figure>
+        <!-- Pigeon Express Features -->
+        <figure class="gallery-card">
+          <div class="gallery-img-wrap">
+            <img src="Images/PigeonExpress-FeaturesScreenshot.png" alt="Pigeon Express features section" loading="lazy" />
+          </div>
+          <figcaption>
+            <span class="gallery-proj-name">Pigeon Express</span>
+            <span>features section: delivery landing page</span>
+          </figcaption>
+        </figure>
+        <!-- Pigeon Express Prices -->
+        <figure class="gallery-card">
+          <div class="gallery-img-wrap">
+            <img src="Images/PigeonExpress-PricesScreenshot.png" alt="Pigeon Express pricing section" loading="lazy" />
+          </div>
+          <figcaption>
+            <span class="gallery-proj-name">Pigeon Express</span>
+            <span>pricing section: delivery landing page</span>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- Fullscreen Gallery Overlay -->
+  <div class="gallery-fullscr" id="gallery-fullscr" aria-hidden="true" role="dialog" aria-label="Fullscreen screenshot viewer">
+    <img id="gallery-fullscr-img" src="" alt="" />
+    <div id="gallery-fullscr-caption" class="gallery-fullscr-caption"></div>
+    <button class="gallery-fullscr-close" id="gallery-fullscr-close" aria-label="Close fullscreen gallery">&times;</button>
+    <button class="gallery-fullscr-prev" id="gallery-fullscr-prev" aria-label="Previous screenshot">&larr;</button>
+    <button class="gallery-fullscr-next" id="gallery-fullscr-next" aria-label="Next screenshot">&rarr;</button>
+  </div>
+
+  <!-- ================================================================== -->
+  <!-- TIMELINE — JOURNEY                                                  -->
+  <!-- ================================================================== -->
+  <section id="timeline" aria-label="Journey">
+    <div class="container">
+      <h2 class="section-title reveal" data-index="05." data-i18n="timelineTitle">journey.log</h2>
+      <div class="timeline reveal-stagger">
+        <div class="timeline-item">
+          <div class="timeline-date" data-i18n="timeline1Date">2015</div>
+          <div class="timeline-title" data-i18n="timeline1Title">First Code: Scratch Games</div>
+          <div class="timeline-desc" data-i18n="timeline1Desc">Started making silly Scratch games at age 6...</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-date" data-i18n="timeline2Date">2017</div>
+          <div class="timeline-title" data-i18n="timeline2Title">Arduino & Electronics</div>
+          <div class="timeline-desc" data-i18n="timeline2Desc">My father taught me Arduino basics at age 8...</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-date" data-i18n="timeline3Date">2023 – 2025</div>
+          <div class="timeline-title" data-i18n="timeline3Title">Technical Degree in Industrial Automation</div>
+          <div class="timeline-desc" data-i18n="timeline3Desc">Integrated high school + technician degree...</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-date" data-i18n="timeline4Date">2024</div>
+          <div class="timeline-title" data-i18n="timeline4Title">First Web Project: BirdTyping</div>
+          <div class="timeline-desc" data-i18n="timeline4Desc">Built and shipped a minimalist typing test...</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-date" data-i18n="timeline5Date">2024 – 2025</div>
+          <div class="timeline-title" data-i18n="timeline5Title">Programming Monitor at School</div>
+          <div class="timeline-desc" data-i18n="timeline5Desc">Served as a programming monitor (teacher assistant)...</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-date" data-i18n="timeline6Date">2025</div>
+          <div class="timeline-title" data-i18n="timeline6Title">AI on the Edge: PEDRO</div>
+          <div class="timeline-desc" data-i18n="timeline6Desc">Trained an object detection model on Edge Impulse...</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-date" data-i18n="timeline7Date">2025 – 2026</div>
+          <div class="timeline-title" data-i18n="timeline7Title">Full-Stack Expansion</div>
+          <div class="timeline-desc" data-i18n="timeline7Desc">Built School Scheduler with React + Node.js...</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-date" data-i18n="timeline8Date">2026 →</div>
+          <div class="timeline-title" data-i18n="timeline8Title">What's Next?</div>
+          <div class="timeline-desc" data-i18n="timeline8Desc">Open to remote opportunities in automation, IoT, and web development. Looking for real, meaningful challenges.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================================== -->
+  <!-- CONTACT                                                             -->
+  <!-- ================================================================== -->
   <section id="contact" aria-label="Contact">
     <div class="container">
-      <h2 class="section-title reveal" data-index="04"><span data-i18n="contactTitle">contact.sh</span></h2>
-
+      <h2 class="section-title reveal" data-index="06." data-i18n="contactTitle">contact.sh</h2>
       <div class="contact-inner">
         <div class="contact-copy reveal">
-          <p data-i18n="contactP1">I'm always open to interesting projects, collaboration ideas, or just a chat about technology and automation. Feel free to reach out!</p>
-          <p data-i18n="contactP2">The best way to contact me is via email or discord. I typically reply within 72 hours.</p>
-          <a href="mailto:herculesfrock@gmail.com" class="contact-email">
-            <i class="fa fa-envelope" aria-hidden="true"></i>
+          <p data-i18n="contactP1">I'm open to interesting projects, collaboration ideas, or just a good conversation about automation and technology. Let's build something together.</p>
+          <p data-i18n="contactP2">The best way to reach me is via email or Discord. I usually reply within 72 hours.</p>
+          <a href="mailto:herculesfrock@gmail.com" class="contact-email" rel="noopener">
+            <svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true" width="18" height="18"><path fill="currentColor" d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
             herculesfrock@gmail.com
           </a>
-
+          <br>
+          <!-- Resume PDF download / print CTA -->
+          <a href="resume.html" class="resume-dl-link" aria-label="Download resume" data-i18n="resumeCTA">
+            <svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true" width="18" height="18"><path fill="currentColor" d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+            Download CV (Print → Save as PDF)
+          </a>
           <div class="social-links">
             <a href="https://github.com/HerculesDam"   target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub">
               <i class="fa-brands fa-github"></i> GitHub
@@ -292,17 +614,17 @@
         <div class="contact-terminal reveal">
           <div class="contact-terminal-bar">bash — contact</div>
           <div class="contact-terminal-body">
-            <div class="ct-line"><span class="ct-prompt">$&gt; </span><span class="ct-cmd">ping herculesfrock@gmail.com</span></div>
+            <div class="ct-line"><span class="ct-prompt">$> </span><span class="ct-cmd">ping herculesfrock@gmail.com</span></div>
             <div class="ct-line ct-out" data-i18n="ctOut1">PING herculesfrock@gmail.com: checking availability...</div>
             <div class="ct-line ct-out ct-ok" data-i18n="ctOut2">64 bytes from hercules: time=12ms  ✓ ONLINE</div>
             <div class="ct-line">&nbsp;</div>
-            <div class="ct-line"><span class="ct-prompt">$&gt; </span><span class="ct-cmd">curl -X GET /api/availability</span></div>
+            <div class="ct-line"><span class="ct-prompt">$> </span><span class="ct-cmd">curl -X GET /api/availability</span></div>
             <div class="ct-line ct-out">{ <span style="color:#f8c555">"status"</span>: <span style="color:#00ff99">"available"</span>,</div>
-            <div class="ct-line ct-out">&nbsp;&nbsp;<span style="color:#f8c555">"response_time"</span>: <span style="color:#d19a66">"&lt; 72h"</span>,</div>
+            <div class="ct-line ct-out">&nbsp;&nbsp;<span style="color:#f8c555">"response_time"</span>: <span style="color:#d19a66">"< 72h"</span>,</div>
             <div class="ct-line ct-out">&nbsp;&nbsp;<span style="color:#f8c555">"open_to"</span>: <span style="color:#00ff99">"remote"</span> }</div>
             <div class="ct-line">&nbsp;</div>
             <div class="ct-line">
-              <span class="ct-prompt">$&gt; </span><span data-i18n="ctCmd3">send_message --to hercules</span><span class="cursor" aria-hidden="true"></span>
+              <span class="ct-prompt">$> </span><span data-i18n="ctCmd3">send_message --to hercules</span><span class="cursor" aria-hidden="true"></span>
             </div>
           </div>
         </div>
@@ -310,18 +632,18 @@
     </div>
   </section>
 
-  <!-- ── Footer ── -->
-  <footer>
+  <!-- ================================================================== -->
+  <!-- FOOTER                                                              -->
+  <!-- ================================================================== -->
+  <footer aria-label="Footer">
     <div class="footer-inner">
-      <span data-i18n="footerLeft">Built with coffee</span>
-      <span>
-        <span data-i18n="footerRight">Designed &amp; coded by</span>
-        <a href="#hero">Hércules Dâmaso</a>
-      </span>
+      <span data-i18n="footerLeft">Built with coffee & curiosity</span>
+      <span>&copy; 2026 <span data-i18n="footerRight">Designed & coded by</span> <a href="#">Hércules Dâmaso</a></span>
     </div>
   </footer>
 
-  <script src="js/translations.js"></script>
-  <script src="js/main.js"></script>
+  <!-- Scripts (deferred) -->
+  <script src="js/translations.js" defer></script>
+  <script src="js/main.js" defer></script>
 </body>
 </html>

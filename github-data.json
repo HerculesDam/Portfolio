@@ -1,0 +1,44 @@
+[
+  {
+    "name": "BirdTyping",
+    "description": "Minimalist typing speed test with real-time WPM and multi-language word lists.",
+    "language": "JavaScript",
+    "stars": 1
+  },
+  {
+    "name": "Pressa",
+    "description": "RSVP speed reading tool for breaking reading speed plateaus.",
+    "language": "JavaScript",
+    "stars": 1
+  },
+  {
+    "name": "GymPlataforma",
+    "description": "Fitness platform — HTML5, CSS3, JavaScript.",
+    "language": "JavaScript",
+    "stars": 0
+  },
+  {
+    "name": "DevsHelper",
+    "description": "Python utility scripts for developer productivity automation.",
+    "language": "Python",
+    "stars": 0
+  },
+  {
+    "name": "Portfolio",
+    "description": "Personal developer portfolio — terminal-themed, bilingual EN/PT, interactive CLI.",
+    "language": "JavaScript",
+    "stars": 0
+  },
+  {
+    "name": "School-Scheduler",
+    "description": "Full-stack React + Node.js app for automated class scheduling.",
+    "language": "JavaScript",
+    "stars": 0
+  },
+  {
+    "name": "Pigeon-Express",
+    "description": "Uber-like ride app clone built with React Native, TailwindCSS, Google Maps API — real-time driver tracking.",
+    "language": "JavaScript",
+    "stars": 0
+  }
+]
