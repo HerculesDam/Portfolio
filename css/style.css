@@ -486,7 +486,7 @@ body:not(.motion-safe) .animated-bg { display: none; }
   padding: 1.5rem 2rem;
   max-height: 420px;
   min-height: 280px;
-  min-width: 800px;
+  min-width: 50rem;
   overflow-y: auto;
   font-size: 0.82rem;
   line-height: 1.8;
