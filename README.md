@@ -1,4 +1,4 @@
-# Portfolio — Hércules Dâmaso
+# Portfolio — Hércules Ferreira
 
 > **"Bridging industrial automation with modern software — factory floor to cloud."**
 
@@ -62,8 +62,8 @@ Portfolio/
 
 ## License
 
-This portfolio is personal property of Hércules Dâmaso. Feel free to use the code and design patterns as inspiration for your own portfolio.
+This portfolio is personal property of Hércules Ferreira. Feel free to use the code and design patterns as inspiration for your own portfolio.
 
 ---
 
-Built with ☕ + 🎯 by [Hércules Dâmaso](https://github.com/HerculesDam)
+Built with ☕ + 🎯 by [Hércules Ferreira](https://github.com/HerculesDam)

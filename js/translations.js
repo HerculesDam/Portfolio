@@ -2,9 +2,9 @@
 const translations = {
   en: {
     // ─── META ───
-    pageTitle:    "Hércules Dâmaso | Automation & Software Developer",
+    pageTitle:    "Hércules Ferreira | Automation & Software Developer",
     metaDesc:     "17-year-old developer working with industrial automation and modern software. IoT, embedded systems, full-stack web, AI on edge devices.",
-    ogTitle:      "Hércules Dâmaso | Automation & Software Developer",
+    ogTitle:      "Hércules Ferreira | Automation & Software Developer",
     ogDesc:       "Industrial automation meets full-stack development. ESP32, TensorFlow Lite, React, and Python.",
 
     // ─── NAV ───
@@ -19,9 +19,9 @@ const translations = {
     themeToggle:  "Toggle light/dark theme",
 
     // ─── TERMINAL ───
-    termWelcome:  "Welcome to Hércules Dâmaso's interactive terminal. Type <span class='t-cmd'>help</span> to see available commands.",
+    termWelcome:  "Welcome to Hércules Ferreira's interactive terminal. Type <span class='t-cmd'>help</span> to see available commands.",
     termHelp:     "Available commands:<br><br>  <span class='t-cmd'>whoami</span>              — About me<br>  <span class='t-cmd'>neofetch</span>            — System info<br>  <span class='t-cmd'>ls projects</span>         — List projects<br>  <span class='t-cmd'>cat resume</span>          — View resume<br>  <span class='t-cmd'>contact</span>             — Contact info<br>  <span class='t-cmd'>skills</span>              — Tech stack<br>  <span class='t-cmd'>cowsay <msg></span>       — Cow says something<br>  <span class='t-cmd'>fortune</span>             — Random dev wisdom<br>  <span class='t-cmd'>clear</span>               — Clear terminal<br>  <span class='t-cmd'>lang [en|pt]</span>        — Switch language<br>  <span class='t-cmd'>theme [dark|light]</span>  — Switch theme",
-    termWhoami:   "Hércules Dâmaso, 17-year-old developer from Brazil. Coding since age 6 (Scratch games), Arduino at 8 with my father, industrial automation technician and self-taught full-stack dev. Former programming monitor (teacher assistant) at school. I love building things at the intersection of hardware and software.",
+    termWhoami:   "Hércules Ferreira, 17-year-old developer from Brazil. Coding since age 6 (Scratch games), Arduino at 8 with my father, industrial automation technician and self-taught full-stack dev. Former programming monitor (teacher assistant) at school. I love building things at the intersection of hardware and software.",
     termNeofetch: [
       "■■■■%*****%■■■■■%****#%■■■■",
       "■■■■%*+++*%■■■■■%****#%■■■■",
@@ -216,9 +216,9 @@ const translations = {
 
   pt: {
     // ─── META ───
-    pageTitle:    "Hércules Dâmaso | Automação & Desenvolvimento de Software",
+    pageTitle:    "Hércules Ferreira | Automação & Desenvolvimento de Software",
     metaDesc:     "Desenvolvedor de 17 anos trabalhando com automação industrial e software moderno. IoT, sistemas embarcados, full-stack web e IA em dispositivos edge.",
-    ogTitle:      "Hércules Dâmaso | Desenvolvedor de Automação & Software",
+    ogTitle:      "Hércules Ferreira | Desenvolvedor de Automação & Software",
     ogDesc:       "Automação industrial encontra desenvolvimento full-stack. ESP32, TensorFlow Lite, React e Python.",
 
     // ─── NAV ───
@@ -233,9 +233,9 @@ const translations = {
     themeToggle:  "Alternar tema claro/escuro",
 
     // ─── TERMINAL ───
-    termWelcome:  "Bem-vindo ao terminal interativo do Hércules Dâmaso. Digite <span class='t-cmd'>help</span> para ver os comandos disponíveis.",
+    termWelcome:  "Bem-vindo ao terminal interativo do Hércules Ferreira. Digite <span class='t-cmd'>help</span> para ver os comandos disponíveis.",
     termHelp:     "Comandos disponíveis:<br><br>  <span class='t-cmd'>whoami</span>              — Sobre mim<br>  <span class='t-cmd'>neofetch</span>            — Informações do sistema<br>  <span class='t-cmd'>ls projects</span>         — Listar projetos<br>  <span class='t-cmd'>cat resume</span>          — Ver currículo<br>  <span class='t-cmd'>contact</span>             — Contato<br>  <span class='t-cmd'>skills</span>              — Habilidades<br>  <span class='t-cmd'>cowsay <msg></span>       — A vaquinha fala algo<br>  <span class='t-cmd'>fortune</span>             — Sabedoria dev aleatória<br>  <span class='t-cmd'>clear</span>               — Limpar terminal<br>  <span class='t-cmd'>lang [en|pt]</span>        — Mudar idioma<br>  <span class='t-cmd'>theme [dark|light]</span>  — Mudar tema",
-    termWhoami:   "Hércules Dâmaso, desenvolvedor de 17 anos do Brasil. Programando desde os 6 anos (joguinhos no Scratch), Arduino aos 8 com meu pai, técnico em automação industrial e dev full-stack autodidata. Ex-monitor de programação (professor assistente) na escola. Adoro construir coisas na interseção entre hardware e software.",
+    termWhoami:   "Hércules Ferreira, desenvolvedor de 17 anos do Brasil. Programando desde os 6 anos (joguinhos no Scratch), Arduino aos 8 com meu pai, técnico em automação industrial e dev full-stack autodidata. Ex-monitor de programação (professor assistente) na escola. Adoro construir coisas na interseção entre hardware e software.",
     termNeofetch: [
       "■■■■%*****%■■■■■%****#%■■■■",
       "■■■■%*+++*%■■■■■%****#%■■■■",
