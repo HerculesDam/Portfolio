@@ -598,6 +598,10 @@ body:not(.motion-safe) .animated-bg { display: none; }
   color: var(--accent2);
   font-weight: 600;
   font-size: 0.9rem;
+  display: inline-block;
+  min-width: 26ch;        /* stable size for longest role text + cursor; prevents terminal jitter */
+  text-align: left;
+  white-space: nowrap;
 }
 .multi-text-wrap .cursor { background: var(--accent2); }
 
@@ -1201,6 +1205,7 @@ footer {
   #about, #skills, #projects, #timeline, #gallery, #contact { padding: 60px 0; }
   .terminal-body { padding: 0.8rem 1rem; max-height: 250px; min-height: 200px; font-size: 0.7rem; }
   .term-input { font-size: 0.7rem; }
+  .multi-text-wrap { font-size: 0.75rem; min-width: 18ch; }
   .hero-cta-row { padding: 0 1rem 1.2rem; }
   .hero-info-line { padding: 0.8rem 1rem 0; }
   .hero-titlebar { padding: 8px 12px; }
